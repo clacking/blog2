@@ -1,0 +1,25 @@
+---
+title: CatalinaでHomebrewのupgradeができなくなった
+date: "2019-09-04T17:00:50.415Z"
+update: "2019-09-04T17:00:50.415Z"
+tags: [macos, memo]
+lang: ja-JP
+orig: yes
+---
+
+brewでupgradeを走らせようとお前のXCode(10.3)は古いぞとのこと。
+
+```
+Warning: Your Xcode (10.3) is outdated.
+Please update to Xcode 11.0 (or delete it).
+```
+
+10.3はstableなのですが、Beta環境ではXCodeもBetaを使えということだと思います。多分
+
+最新のCommand Line Tools for Xcode 11 Betaを[Apple Developers](https://developer.apple.com/download/more/)より11.0の最新ベータをダウンロードしてインストールする。
+
+↑だけでダメな場合はXCode 11 BetaをダウンロードしApplicationsに移動させてから以下を実行させてください。
+
+```sh
+sudo xcode-select -s /Applications/Xcode-beta.app
+```

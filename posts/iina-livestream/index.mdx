@@ -1,0 +1,30 @@
+---
+title: IINAでYoutubeのLiveStreamが再生できない
+date: "2019-08-15T04:25:02.514Z"
+update: "2019-08-15T04:25:02.514Z"
+tags: [macos, mpv, 小ネタ]
+origi: mid
+lang: ja-JP
+---
+
+[IINA](https://iina.io/)は[mpv](https://mpv.io)をベースにしたメディアプレイヤーです。
+
+その為mpvのようにYoutubeの生放送をそのまま再生できるかと思いましたが、できませんでした。
+
+IINAにバンドルされているyoutube-dlのバージョンが古い為、変更する必要がありました。
+
+youtube-dlを導入する一番楽な方法はbrewを使うことだと思います
+
+```
+$ brew install youtube-dl
+```
+
+導入したらIINAの設定を変えます。
+
+![](./iina.png)
+
+パスですが、大抵は`/usr/local/bin/`にあると思いますが、違う場合は以下で確認してください。
+
+```
+$ which youtube-dl
+```

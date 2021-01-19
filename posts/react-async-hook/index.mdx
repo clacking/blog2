@@ -1,0 +1,26 @@
+---
+title: React Hookと非同期なState更新で少し躓いたこと
+date: "2019-02-08T07:21:42.763Z"
+update: "2019-02-12T07:33:38.892Z"
+tags: [react, js]
+origi: mid
+lang: ja-JP
+---
+
+ちょっとしたツールを作ろうと、よくあるテーブルのコンポーネントにHookで作った`Array<{}>`なStateを入れました。
+
+追加したデータは情報を取得(async)出来たら変更しsetします。
+
+<iframe src="https://codesandbox.io/embed/jk0l16nzw" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+このように作ってみましたがうまくいきませんでした。非同期処理が終わるとその後に追加された物は消えるような挙動です。
+
+どうやら非同期処理をsetした後に実行すると、その関数を呼び出した時点のstateしか持ちません。
+
+関数がレンダリングされることにuseStateが実行され変わりますが、非同期な処理を中に入れて実行するとその時点のデータしか持たないのでズレるような処理になっていたようです。
+
+解決するにはreducer等でどうにかしときます。
+
+<iframe src="https://codesandbox.io/embed/84l7nkmx9" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+そもそもこんな方法でStateを扱うのがどうなのかというところもありますが…
