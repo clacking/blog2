@@ -15,7 +15,9 @@ export default function Layout ({children}) {
                     </p>
                 </div>
             </header>
+            <main className="container mx-auto">
             { children }
+            </main>
             <footer className="relative p-4">
                 <p className="absolute p-4 right-0">Powered by <a href="https://nextjs.org/">Next.js</a></p>
             </footer>

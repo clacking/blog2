@@ -1,13 +1,27 @@
 import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
-import Head from 'next/head'
+import Head from 'next/head';
 import { getPosts, getPost } from '../../helper';
 import BlogLayout from '../../components/BlogLayout';
+import Youtube from '../../components/Youtube';
+import Iframe from '../../components/Iframe';
+
+const component = (slug) => ({
+    img: ({src, alt}) => {
+        const imgUrl = src.startsWith('./') ? src.slice(2) : src;
+        const file = require(`../../posts/${slug}/${imgUrl}`).default;
+        return <img className="shadow-lg w-4/5 m-auto" src={file} alt={alt} />
+    },
+    Youtube: Youtube,
+    Iframe: Iframe
+})
 
 export const getStaticProps = async ({params}) => {
     const slug = params.slug;
     const post = getPost(slug);
-    const source = await renderToString(post.content);
+    const source = await renderToString(post.content, {
+        components: component(slug)
+    });
 
     return {
         props: {
@@ -23,12 +37,7 @@ export const getStaticPaths = async () => {
 
 export default function BlogPost ({slug, meta, source}) {
     const content = hydrate(source, {
-        components: {
-            img: ({src}) => {
-                const imgUrl = src.startsWith('./') ? src.slice(2) : src;
-                return <img className="shadow-lg w-4/5 m-auto" src={require(`../../posts/${slug}/${imgUrl}`).default} />
-            }
-        }
+        components: component(slug)
     });
     const { title, date, update, tags } = meta;
     return (
