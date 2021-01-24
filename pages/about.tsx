@@ -58,8 +58,16 @@ export default function About() {
                 </p>
                 <h3>papers</h3>
                 <ol>
-                    <li>木下 透弥, 久松 潤之, "WebRTCを用いた低遅延ライブストリーミング方式の検討" 電気学会研究会資料. IS / 情報システム研究会, pp. 11.-16., June 2020</li>
-                    <li>木下 透弥, 久松 潤之, "輻輳制御機能を備えた低遅延ライブストリーミングシステムの提案および評価" 電気関係学会関西連合大会 講演論文集(G11-2), Nov 2020</li>
+                    <li>
+                        木下 透弥, 久松 潤之, "WebRTCを用いた低遅延ライブストリーミング方式の検討"
+                        {' '}
+                        電気学会研究会資料. IS / 情報システム研究会, pp. 11.-16., June 2020 [<a href="/assets/iee-wrtc-slide.pdf">slide</a>]
+                    </li>
+                    <li>
+                        木下 透弥, 久松 潤之, "輻輳制御機能を備えた低遅延ライブストリーミングシステムの提案および評価"
+                        {' '}
+                        電気関係学会関西連合大会 講演論文集(G11-2), Nov 2020 [<a href="/assets/kjciee-wrtc-slide.pdf">slide</a>]
+                    </li>
                 </ol>
                 <h3>Program/Tool/Application</h3>
                 <ul>
