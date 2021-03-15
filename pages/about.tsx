@@ -56,6 +56,17 @@ export default function About() {
                     WebRTC で配信を届ける。
                     <div className="italic font-extralight text-right m-0">Node.js, WebRTC, Video Streaming</div>
                 </p>
+                <h4>IoT を用いた安価な ホームオートメーションシステムの実現</h4>
+                <p>
+                    現代では Internet of Things (IoT) を用いたスマートホームシステム、<br />
+                    ホームオートメーションシステムが注目されている。<br />
+                    しかしホームオートメーションシステムを実装された住宅、またはシステムを実装する為の<br />
+                    工事をするのはコストがかかるなど難易度が高い。<br />
+                    本稿では、個人で費用を抑えながらも工事など難易度の高くなる作業をすることなく、<br />
+                    コンポーネントシステムによりデータの扱いを汎用性のある方法で収集できるホームオートメーションシステムを実装する。
+                    <div className="italic font-extralight text-right m-0">[<a href="/assets/nwtn_pstr_public.pdf">Poster</a>]</div>
+                    <div className="italic font-extralight text-right m-0">Node.js, IoT, ホームオートメーション</div>
+                </p>
                 <h3>papers</h3>
                 <ol>
                     <li>
